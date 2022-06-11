@@ -10,14 +10,14 @@ Product.belongsTo(Category, {
 })
 
 // Categories have many Products
-Category.belongsTo(Product, {
+Category.hasMany(Product, {
   foriegnKey: 'category_id'
 })
 
 // Products belongToMany Tags (through ProductTag)
-Product.belongsToMany(Product, {
+Product.belongsToMany(Tag, {
   through: ProductTag,
-  foriegnKey: 'tag_id'
+  foriegnKey: 'product_id'
 })
 
 // Tags belongToMany Products (through ProductTag)
